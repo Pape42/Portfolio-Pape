@@ -1,0 +1,121 @@
+/* Container principal de la page */
+.page {
+  min-height: 100vh;
+  padding: 120px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Grid pour projets ou cartes */
+.grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Card projets ou sections */
+.card {
+  padding: 24px;
+  border: 1px solid #222;
+  border-radius: 16px;
+  background: #0d0d0d;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #444;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+}
+
+/* Formulaire de contact */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 420px;
+  width: 100%;
+  margin: 60px auto;
+}
+
+.form input,
+.form textarea {
+  padding: 14px;
+  background: #111;
+  border: 1px solid #222;
+  color: white;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  font-family: var(--font-geist-sans);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: white;
+  background: #151515;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Boutons */
+.form button {
+  padding: 14px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: "astra", sans-serif;
+}
+
+.form button:hover {
+  background: #eaeaea;
+  transform: translateY(-2px);
+}
+
+.form button:active {
+  transform: translateY(0);
+  background: #dcdcdc;
+}
+
+/* Message de statut */
+.status {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: #fff;
+  font-family: var(--font-geist-sans);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .page {
+    padding: 100px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 80px 20px;
+  }
+
+  .form {
+    margin: 40px auto;
+  }
+
+  .grid {
+    gap: 16px;
+  }
+}

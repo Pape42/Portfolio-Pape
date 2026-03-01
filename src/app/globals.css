@@ -1,0 +1,261 @@
+/* ==================================================
+   FONTS
+================================================== */
+
+@font-face {
+  font-family: "astra";
+  src: url("/font/Astra-6RGXq.otf") format("opentype");
+  font-display: swap;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #000;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans); /* Texte lisible */
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==================================================
+   LANDING FULLSCREEN
+================================================== */
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.center-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-container {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: absolute;
+  inset: 0;
+}
+
+.model-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.scene-loading {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* ==================================================
+   TITRES (TOUS H1, H2, H3…) EN ASTRA
+================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "astra", sans-serif;
+}
+
+/* TITRE SPECIFIQUE LANDING */
+.landing-title {
+  position: absolute;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  text-align: center;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  font-family: "astra", sans-serif;
+}
+
+/* ==================================================
+   BOUTON (ASTRA)
+================================================== */
+
+.start-button {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  padding: 14px 42px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 1px solid #000;
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: "astra", sans-serif;
+}
+
+.start-button:hover:not(:disabled) {
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%) translateY(-7px);
+  background: #000;
+  color: #fff;
+}
+
+.start-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.start-button:active:not(:disabled) {
+  transform: translateX(-50%) translateY(-3px);
+}
+
+/* ==================================================
+   FADE OVERLAY
+================================================== */
+
+.fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  z-index: 11;
+}
+
+.fade-overlay.show {
+  opacity: 1;
+}
+
+/* ==================================================
+   NAVIGATION (ASTRA)
+================================================== */
+
+nav,
+.nav,
+.nav a {
+  font-family: "astra", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav a {
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ==================================================
+   TEXTE (GEIST)
+================================================== */
+
+p,
+li,
+input,
+textarea {
+  font-family: var(--font-geist-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: #d1d1d1;
+}
+
+/* ==================================================
+   CODE (GEIST MONO)
+================================================== */
+
+code,
+pre {
+  font-family: var(--font-geist-mono);
+}
+
+/* ==================================================
+   SCROLLBAR MINIMAL
+================================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 10px;
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .landing-title {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    top: 4vh;
+  }
+
+  .start-button {
+    padding: 12px 36px;
+    font-size: 0.9rem;
+    bottom: 15px;
+  }
+}
